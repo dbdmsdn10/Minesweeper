@@ -2,267 +2,265 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 public class minedetect3 {
-	JButton[] a;// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
-	int i;// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¡
+	JButton[] a;// ¸¶ÀÎ ¹øÁö¼ö µé
+	int i;// ÇöÁ¦À§Ä¡
 
-	int[] c;// ï¿½ï¿½ï¿½Î°ï¿½ï¿½ï¿½  minedetector
-	int[] d;// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¡minearray
-	int k;// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ ï¿½ï¿½ï¿½Î±×·ï¿½ï¿½ï¿½ Å²ï¿½Ç°ï¿½
+	int[] c;// ¸¶ÀÎ°¹¼ö
+	int k;// À¯Àú°¡´©¸¥°Ç°¡ ÇÁ·Î±×·¥ÀÌ Å²°Ç°¡
 
-	public minedetect3(JButton[] a, int i, int[] c, int k,int[] d) {
+	public minedetect3(JButton[] a, int i, int[] c, int k) {
 		this.a = a;
 		this.i = i;
 		this.c = c;
 		this.k = k;
-		this.d=d;
 	}
 
 	public void run() {
-	
+		System.out.println(i + "¹øÁö");
 
-		if (a[i].getIcon().toString().equals("0ê°œ.png")) {
-			if ((i + 1) % 9 == 0)// ê°œê°œê°œê°œ
+		if (a[i].getIcon().toString().equals("0°³.png")) {
+			if ((i + 1) % 9 == 0)// ¿À¸¥ÂÊÁÙ
 			{
 				if (i == 8) {
 
-					if (!a[i - 1].getIcon().toString().equals("0ê°œ.png")) {
+					if (!a[i - 1].getIcon().toString().equals("0°³.png")) {
 
-						a[i - 1].setIcon(new ImageIcon(c[i - 1] + "ê°œ.png"));
-						new minedetect3(a, i - 1, c, 0,d).run();
+						a[i - 1].setIcon(new ImageIcon(c[i - 1] + "°³.png"));
+						new minedetect3(a, i - 1, c, 0).run();
 
 					} else {
 					}
-					if (!a[i + 8].getIcon().toString().equals("0ê°œ.png")) {
-						a[i + 8].setIcon(new ImageIcon(c[i + 8] + "ê°œ.png"));
-						new minedetect3(a, i + 8, c, 0,d).run();
+					if (!a[i + 8].getIcon().toString().equals("0°³.png")) {
+						a[i + 8].setIcon(new ImageIcon(c[i + 8] + "°³.png"));
+						new minedetect3(a, i + 8, c, 0).run();
 					} else {
 					}
-					if (!a[i + 9].getIcon().toString().equals("0ê°œ.png")) {
-						a[i + 9].setIcon(new ImageIcon(c[i + 9] + "ê°œ.png"));
-						new minedetect3(a, i + 9, c, 0,d).run();
+					if (!a[i + 9].getIcon().toString().equals("0°³.png")) {
+						a[i + 9].setIcon(new ImageIcon(c[i + 9] + "°³.png"));
+						new minedetect3(a, i + 9, c, 0).run();
 					} else {
 					}
 
 				} else if (i == 80) {
-					if (!a[i - 10].getIcon().toString().equals("0ê°œ.png")) {
-						a[i - 10].setIcon(new ImageIcon(c[i - 10] + "ê°œ.png"));
-						new minedetect3(a, i - 10, c, 0,d).run();
+					if (!a[i - 10].getIcon().toString().equals("0°³.png")) {
+						a[i - 10].setIcon(new ImageIcon(c[i - 10] + "°³.png"));
+						new minedetect3(a, i - 10, c, 0).run();
 					} else {
 					}
-					if (!a[i - 9].getIcon().toString().equals("0ê°œ.png")) {
-						a[i - 9].setIcon(new ImageIcon(c[i - 9] + "ê°œ.png"));
-						new minedetect3(a, i - 9, c, 0,d).run();
+					if (!a[i - 9].getIcon().toString().equals("0°³.png")) {
+						a[i - 9].setIcon(new ImageIcon(c[i - 9] + "°³.png"));
+						new minedetect3(a, i - 9, c, 0).run();
 					} else {
 					}
 
-					if (!a[i - 1].getIcon().toString().equals("0ê°œ.png")) {
-						a[i - 1].setIcon(new ImageIcon(c[i - 1] + "ê°œ.png"));
-						new minedetect3(a, i - 1, c, 0,d).run();
+					if (!a[i - 1].getIcon().toString().equals("0°³.png")) {
+						a[i - 1].setIcon(new ImageIcon(c[i - 1] + "°³.png"));
+						new minedetect3(a, i - 1, c, 0).run();
 					} else {
 					}
 
 				} else {
-					if (!a[i - 10].getIcon().toString().equals("0ê°œ.png")) {
-						a[i - 10].setIcon(new ImageIcon(c[i - 10] + "ê°œ.png"));
-						new minedetect3(a, i - 10, c, 0,d).run();
+					if (!a[i - 10].getIcon().toString().equals("0°³.png")) {
+						a[i - 10].setIcon(new ImageIcon(c[i - 10] + "°³.png"));
+						new minedetect3(a, i - 10, c, 0).run();
 					} else {
 					}
-					if (!a[i - 9].getIcon().toString().equals("0ê°œ.png")) {
-						a[i - 9].setIcon(new ImageIcon(c[i - 9] + "ê°œ.png"));
-						new minedetect3(a, i - 9, c, 0,d).run();
-					} else {
-					}
-
-					if (!a[i - 1].getIcon().toString().equals("0ê°œ.png")) {
-						a[i - 1].setIcon(new ImageIcon(c[i - 1] + "ê°œ.png"));
-						new minedetect3(a, i - 1, c, 0,d).run();
-					} else {
-					}
-					if (!a[i + 8].getIcon().toString().equals("0ê°œ.png")) {
-						a[i + 8].setIcon(new ImageIcon(c[i + 8] + "ê°œ.png"));
-						new minedetect3(a, i + 8, c, 0,d).run();
+					if (!a[i - 9].getIcon().toString().equals("0°³.png")) {
+						a[i - 9].setIcon(new ImageIcon(c[i - 9] + "°³.png"));
+						new minedetect3(a, i - 9, c, 0).run();
 					} else {
 					}
 
-					if (!a[i + 9].getIcon().toString().equals("0ê°œ.png")) {
-						a[i + 9].setIcon(new ImageIcon(c[i + 9] + "ê°œ.png"));
-						new minedetect3(a, i + 9, c, 0,d).run();
+					if (!a[i - 1].getIcon().toString().equals("0°³.png")) {
+						a[i - 1].setIcon(new ImageIcon(c[i - 1] + "°³.png"));
+						new minedetect3(a, i - 1, c, 0).run();
+					} else {
+					}
+					if (!a[i + 8].getIcon().toString().equals("0°³.png")) {
+						a[i + 8].setIcon(new ImageIcon(c[i + 8] + "°³.png"));
+						new minedetect3(a, i + 8, c, 0).run();
+					} else {
+					}
+
+					if (!a[i + 9].getIcon().toString().equals("0°³.png")) {
+						a[i + 9].setIcon(new ImageIcon(c[i + 9] + "°³.png"));
+						new minedetect3(a, i + 9, c, 0).run();
 					} else {
 					}
 
 				}
-			} else if (i % 9 == 0)// ê°œê°œê°œ
+			} else if (i % 9 == 0)// ¿ÞÂÊÁÙ
 			{
 				if (i == 0) {
 
-					if (!a[i + 1].getIcon().toString().equals("0ê°œ.png")) {
-						a[i + 1].setIcon(new ImageIcon(c[i + 1] + "ê°œ.png"));
-						new minedetect3(a, i + 1, c, 0,d).run();
+					if (!a[i + 1].getIcon().toString().equals("0°³.png")) {
+						a[i + 1].setIcon(new ImageIcon(c[i + 1] + "°³.png"));
+						new minedetect3(a, i + 1, c, 0).run();
 					} else {
 					}
 
-					if (!a[i + 9].getIcon().toString().equals("0ê°œ.png")) {
-						a[i + 9].setIcon(new ImageIcon(c[i + 9] + "ê°œ.png"));
-						new minedetect3(a, i + 9, c, 0,d).run();
+					if (!a[i + 9].getIcon().toString().equals("0°³.png")) {
+						a[i + 9].setIcon(new ImageIcon(c[i + 9] + "°³.png"));
+						new minedetect3(a, i + 9, c, 0).run();
 					} else {
 					}
-					if (!a[i + 10].getIcon().toString().equals("0ê°œ.png")) {
-						a[i + 10].setIcon(new ImageIcon(c[i + 10] + "ê°œ.png"));
-						new minedetect3(a, i + 10, c, 0,d).run();
+					if (!a[i + 10].getIcon().toString().equals("0°³.png")) {
+						a[i + 10].setIcon(new ImageIcon(c[i + 10] + "°³.png"));
+						new minedetect3(a, i + 10, c, 0).run();
 					} else {
 					}
 
 				} else if (i == 72) {
 
-					if (!a[i - 9].getIcon().toString().equals("0ê°œ.png")) {
-						a[i - 9].setIcon(new ImageIcon(c[i - 9] + "ê°œ.png"));
-						new minedetect3(a, i - 9, c, 0,d).run();
+					if (!a[i - 9].getIcon().toString().equals("0°³.png")) {
+						a[i - 9].setIcon(new ImageIcon(c[i - 9] + "°³.png"));
+						new minedetect3(a, i - 9, c, 0).run();
 					}
-					if (!a[i - 8].getIcon().toString().equals("0ê°œ.png")) {
-						a[i - 8].setIcon(new ImageIcon(c[i - 8] + "ê°œ.png"));
-						new minedetect3(a, i - 8, c, 0,d).run();
+					if (!a[i - 8].getIcon().toString().equals("0°³.png")) {
+						a[i - 8].setIcon(new ImageIcon(c[i - 8] + "°³.png"));
+						new minedetect3(a, i - 8, c, 0).run();
 					}
 
-					if (!a[i + 1].getIcon().toString().equals("0ê°œ.png")) {
-						a[i + 1].setIcon(new ImageIcon(c[i + 1] + "ê°œ.png"));
-						new minedetect3(a, i + 1, c, 0,d).run();
+					if (!a[i + 1].getIcon().toString().equals("0°³.png")) {
+						a[i + 1].setIcon(new ImageIcon(c[i + 1] + "°³.png"));
+						new minedetect3(a, i + 1, c, 0).run();
 					} else {
 					}
 
 				} else {
 
-					if (!a[i - 9].getIcon().toString().equals("0ê°œ.png")) {
-						a[i - 9].setIcon(new ImageIcon(c[i - 9] + "ê°œ.png"));
-						new minedetect3(a, i - 9, c, 0,d).run();
+					if (!a[i - 9].getIcon().toString().equals("0°³.png")) {
+						a[i - 9].setIcon(new ImageIcon(c[i - 9] + "°³.png"));
+						new minedetect3(a, i - 9, c, 0).run();
 					} else {
 					}
-					if (!a[i - 8].getIcon().toString().equals("0ê°œ.png")) {
-						a[i - 8].setIcon(new ImageIcon(c[i - 8] + "ê°œ.png"));
-						new minedetect3(a, i - 8, c, 0,d).run();
-					} else {
-					}
-
-					if (!a[i + 1].getIcon().toString().equals("0ê°œ.png")) {
-						a[i + 1].setIcon(new ImageIcon(c[i + 1] + "ê°œ.png"));
-						new minedetect3(a, i + 1, c, 0,d).run();
+					if (!a[i - 8].getIcon().toString().equals("0°³.png")) {
+						a[i - 8].setIcon(new ImageIcon(c[i - 8] + "°³.png"));
+						new minedetect3(a, i - 8, c, 0).run();
 					} else {
 					}
 
-					if (!a[i + 9].getIcon().toString().equals("0ê°œ.png")) {
-						a[i + 9].setIcon(new ImageIcon(c[i + 9] + "ê°œ.png"));
-						new minedetect3(a, i + 9, c, 0,d).run();
+					if (!a[i + 1].getIcon().toString().equals("0°³.png")) {
+						a[i + 1].setIcon(new ImageIcon(c[i + 1] + "°³.png"));
+						new minedetect3(a, i + 1, c, 0).run();
 					} else {
 					}
-					if (!a[i + 10].getIcon().toString().equals("0ê°œ.png")) {
-						a[i + 10].setIcon(new ImageIcon(c[i + 10] + "ê°œ.png"));
-						new minedetect3(a, i + 10, c, 0,d).run();
+
+					if (!a[i + 9].getIcon().toString().equals("0°³.png")) {
+						a[i + 9].setIcon(new ImageIcon(c[i + 9] + "°³.png"));
+						new minedetect3(a, i + 9, c, 0).run();
+					} else {
+					}
+					if (!a[i + 10].getIcon().toString().equals("0°³.png")) {
+						a[i + 10].setIcon(new ImageIcon(c[i + 10] + "°³.png"));
+						new minedetect3(a, i + 10, c, 0).run();
 					} else {
 					}
 
 				}
 			} else {
-				if (i / 9 == 0)// 0ê°œ 8ê°œê°œ ê°œê°œê°œ
+				if (i / 9 == 0)// 0°ú 8Á¦¿Ü ¸ÇÀ­ÁÙ
 				{
 
-					if (!a[i - 1].getIcon().toString().equals("0ê°œ.png")) {
-						a[i - 1].setIcon(new ImageIcon(c[i - 1] + "ê°œ.png"));
-						new minedetect3(a, i - 1, c, 0,d).run();
+					if (!a[i - 1].getIcon().toString().equals("0°³.png")) {
+						a[i - 1].setIcon(new ImageIcon(c[i - 1] + "°³.png"));
+						new minedetect3(a, i - 1, c, 0).run();
 					}
 
-					if (!a[i + 1].getIcon().toString().equals("0ê°œ.png")) {
-						a[i + 1].setIcon(new ImageIcon(c[i + 1] + "ê°œ.png"));
-						new minedetect3(a, i + 1, c, 0,d).run();
+					if (!a[i + 1].getIcon().toString().equals("0°³.png")) {
+						a[i + 1].setIcon(new ImageIcon(c[i + 1] + "°³.png"));
+						new minedetect3(a, i + 1, c, 0).run();
 					} else {
 					}
-					if (!a[i + 8].getIcon().toString().equals("0ê°œ.png")) {
-						a[i + 8].setIcon(new ImageIcon(c[i + 8] + "ê°œ.png"));
-						new minedetect3(a, i + 8, c, 0,d).run();
+					if (!a[i + 8].getIcon().toString().equals("0°³.png")) {
+						a[i + 8].setIcon(new ImageIcon(c[i + 8] + "°³.png"));
+						new minedetect3(a, i + 8, c, 0).run();
 					} else {
 					}
-					if (!a[i + 9].getIcon().toString().equals("0ê°œ.png")) {
-						a[i + 9].setIcon(new ImageIcon(c[i + 9] + "ê°œ.png"));
-						new minedetect3(a, i + 9, c, 0,d).run();
+					if (!a[i + 9].getIcon().toString().equals("0°³.png")) {
+						a[i + 9].setIcon(new ImageIcon(c[i + 9] + "°³.png"));
+						new minedetect3(a, i + 9, c, 0).run();
 					} else {
 					}
-					if (!a[i + 10].getIcon().toString().equals("0ê°œ.png")) {
-						a[i + 10].setIcon(new ImageIcon(c[i + 10] + "ê°œ.png"));
-						new minedetect3(a, i + 10, c, 0,d).run();
+					if (!a[i + 10].getIcon().toString().equals("0°³.png")) {
+						a[i + 10].setIcon(new ImageIcon(c[i + 9] + "°³.png"));
+						new minedetect3(a, i + 10, c, 0).run();
 					} else {
 					}
 
-				} else if (i - 71 > 0)// 72ê°œ 80ê°œê°œ ï¿½Ç¾Æ·ê°œï¿½
+				} else if (i - 71 > 0)// 72¿Í 80Á¦¿Ü ¸Ç¾Æ·¡ÁÙ
 				{
-					if (!a[i - 10].getIcon().toString().equals("0ê°œ.png")) {
-						a[i - 10].setIcon(new ImageIcon(c[i - 10] + "ê°œ.png"));
-						new minedetect3(a, i - 10, c, 0,d).run();
+					if (!a[i - 10].getIcon().toString().equals("0°³.png")) {
+						a[i - 10].setIcon(new ImageIcon(c[i - 10] + "°³.png"));
+						new minedetect3(a, i - 10, c, 0).run();
 					} else {
 					}
-					if (!a[i - 9].getIcon().toString().equals("0ê°œ.png")) {
-						a[i - 9].setIcon(new ImageIcon(c[i - 9] + "ê°œ.png"));
-						new minedetect3(a, i - 9, c, 0,d).run();
-					} else {
-					}
-
-					if (!a[i - 8].getIcon().toString().equals("0ê°œ.png")) {
-						a[i - 8].setIcon(new ImageIcon(c[i - 8] + "ê°œ.png"));
-						new minedetect3(a, i - 8, c, 0,d).run();
+					if (!a[i - 9].getIcon().toString().equals("0°³.png")) {
+						a[i - 9].setIcon(new ImageIcon(c[i - 9] + "°³.png"));
+						new minedetect3(a, i - 9, c, 0).run();
 					} else {
 					}
 
-					if (!a[i - 1].getIcon().toString().equals("0ê°œ.png")) {
-						a[i - 1].setIcon(new ImageIcon(c[i - 1] + "ê°œ.png"));
-						new minedetect3(a, i - 1, c, 0,d).run();
+					if (!a[i - 8].getIcon().toString().equals("0°³.png")) {
+						a[i - 8].setIcon(new ImageIcon(c[i - 8] + "°³.png"));
+						new minedetect3(a, i - 8, c, 0).run();
 					} else {
 					}
 
-					if (!a[i + 1].getIcon().toString().equals("0ê°œ.png")) {
-						a[i + 1].setIcon(new ImageIcon(c[i + 1] + "ê°œ.png"));
-						new minedetect3(a, i + 1, c, 0,d).run();
+					if (!a[i - 1].getIcon().toString().equals("0°³.png")) {
+						a[i - 1].setIcon(new ImageIcon(c[i - 1] + "°³.png"));
+						new minedetect3(a, i - 1, c, 0).run();
+					} else {
+					}
+
+					if (!a[i + 1].getIcon().toString().equals("0°³.png")) {
+						a[i + 1].setIcon(new ImageIcon(c[i + 1] + "°³.png"));
+						new minedetect3(a, i + 1, c, 0).run();
 					} else {
 					}
 
 				} else {
-					if (!a[i - 10].getIcon().toString().equals("0ê°œ.png")) {
-						a[i - 10].setIcon(new ImageIcon(c[i - 10] + "ê°œ.png"));
-						new minedetect3(a, i - 10, c, 0,d).run();
+					if (!a[i - 10].getIcon().toString().equals("0°³.png")) {
+						a[i - 10].setIcon(new ImageIcon(c[i - 10] + "°³.png"));
+						new minedetect3(a, i - 10, c, 0).run();
 					} else {
 					}
-					if (!a[i - 9].getIcon().toString().equals("0ê°œ.png")) {
-						a[i - 9].setIcon(new ImageIcon(c[i - 9] + "ê°œ.png"));
-						new minedetect3(a, i - 9, c, 0,d).run();
+					if (!a[i - 9].getIcon().toString().equals("0°³.png")) {
+						a[i - 9].setIcon(new ImageIcon(c[i - 9] + "°³.png"));
+						new minedetect3(a, i - 9, c, 0).run();
 					} else {
 					}
-					if (!a[i - 8].getIcon().toString().equals("0ê°œ.png")) {
-						a[i - 8].setIcon(new ImageIcon(c[i - 8] + "ê°œ.png"));
-						new minedetect3(a, i - 8, c, 0,d).run();
-					} else {
-					}
-
-					if (!a[i - 1].getIcon().toString().equals("0ê°œ.png")) {
-						a[i - 1].setIcon(new ImageIcon(c[i - 1] + "ê°œ.png"));
-						new minedetect3(a, i - 1, c, 0,d).run();
+					if (!a[i - 8].getIcon().toString().equals("0°³.png")) {
+						a[i - 8].setIcon(new ImageIcon(c[i - 8] + "°³.png"));
+						new minedetect3(a, i - 8, c, 0).run();
 					} else {
 					}
 
-					if (!a[i + 1].getIcon().toString().equals("0ê°œ.png")) {
-						a[i + 1].setIcon(new ImageIcon(c[i + 1] + "ê°œ.png"));
-						new minedetect3(a, i + 1, c, 0,d).run();
+					if (!a[i - 1].getIcon().toString().equals("0°³.png")) {
+						a[i - 1].setIcon(new ImageIcon(c[i - 1] + "°³.png"));
+						new minedetect3(a, i - 1, c, 0).run();
 					} else {
 					}
 
-					if (!a[i + 8].getIcon().toString().equals("0ê°œ.png")) {
-						a[i + 8].setIcon(new ImageIcon(c[i + 8] + "ê°œ.png"));
-						new minedetect3(a, i + 8, c, 0,d).run();
+					if (!a[i + 1].getIcon().toString().equals("0°³.png")) {
+						a[i + 1].setIcon(new ImageIcon(c[i + 1] + "°³.png"));
+						new minedetect3(a, i + 1, c, 0).run();
 					} else {
 					}
-					if (!a[i + 9].getIcon().toString().equals("0ê°œ.png")) {
-						a[i + 9].setIcon(new ImageIcon(c[i + 9] + "ê°œ.png"));
-						new minedetect3(a, i + 9, c, 0,d).run();
+
+					if (!a[i + 8].getIcon().toString().equals("0°³.png")) {
+						a[i + 8].setIcon(new ImageIcon(c[i + 8] + "°³.png"));
+						new minedetect3(a, i + 8, c, 0).run();
 					} else {
 					}
-					if (!a[i + 10].getIcon().toString().equals("0ê°œ.png")) {
-						a[i + 10].setIcon(new ImageIcon(c[i + 10] + "ê°œ.png"));
-						new minedetect3(a, i + 10, c, 0,d).run();
+					if (!a[i + 9].getIcon().toString().equals("0°³.png")) {
+						a[i + 9].setIcon(new ImageIcon(c[i + 9] + "°³.png"));
+						new minedetect3(a, i + 9, c, 0).run();
+					} else {
+					}
+					if (!a[i + 10].getIcon().toString().equals("0°³.png")) {
+						a[i + 10].setIcon(new ImageIcon(c[i + 10] + "°³.png"));
+						new minedetect3(a, i + 10, c, 0).run();
 					} else {
 					}
 
@@ -271,181 +269,181 @@ public class minedetect3 {
 
 		} else
 
-		{// 0ê°œ.png ê°œï¿½Æ´Ò¶ï¿½
+		{// 0°³.png °¡¾Æ´Ò¶§
 			if (k == 1) {
-				if ((i + 1) % 9 == 0)// ê°œê°œê°œê°œ
+				if ((i + 1) % 9 == 0)// ¿À¸¥ÂÊÁÙ
 				{
 					if (i == 8) {
 
-						if (a[i - 1].getIcon().toString().equals("0ê°œ-1.png")) {
+						if (a[i - 1].getIcon().toString().equals("0°³-1.png")) {
 
-							a[i - 1].setIcon(new ImageIcon(c[i - 1] + "ê°œ.png"));
-							new minedetect3(a, i - 1, c, 0,d).run();
+							a[i - 1].setIcon(new ImageIcon(c[i - 1] + "°³.png"));
+							new minedetect3(a, i - 1, c, 0).run();
 
 						} else {
 						}
 
-						if (a[i + 9].getIcon().toString().equals("0ê°œ-1.png")) {
-							a[i + 9].setIcon(new ImageIcon(c[i + 9] + "ê°œ.png"));
-							new minedetect3(a, i + 9, c, 0,d).run();
+						if (a[i + 9].getIcon().toString().equals("0°³-1.png")) {
+							a[i + 9].setIcon(new ImageIcon(c[i + 9] + "°³.png"));
+							new minedetect3(a, i + 9, c, 0).run();
 						} else {
 						}
 
 					} else if (i == 80) {
 
-						if (a[i - 9].getIcon().toString().equals("0ê°œ-1.png")) {
-							a[i - 9].setIcon(new ImageIcon(c[i - 9] + "ê°œ.png"));
-							new minedetect3(a, i - 9, c, 0,d).run();
+						if (a[i - 9].getIcon().toString().equals("0°³-1.png")) {
+							a[i - 9].setIcon(new ImageIcon(c[i - 9] + "°³.png"));
+							new minedetect3(a, i - 9, c, 0).run();
 						} else {
 						}
 
-						if (a[i - 1].getIcon().toString().equals("0ê°œ-1.png")) {
-							a[i - 1].setIcon(new ImageIcon(c[i - 1] + "ê°œ.png"));
-							new minedetect3(a, i - 1, c, 0,d).run();
+						if (a[i - 1].getIcon().toString().equals("0°³-1.png")) {
+							a[i - 1].setIcon(new ImageIcon(c[i - 1] + "°³.png"));
+							new minedetect3(a, i - 1, c, 0).run();
 						} else {
 						}
 
 					} else {
 
-						if (a[i - 9].getIcon().toString().equals("0ê°œ-1.png")) {
-							a[i - 9].setIcon(new ImageIcon(c[i - 9] + "ê°œ.png"));
-							new minedetect3(a, i - 9, c, 0,d).run();
+						if (a[i - 9].getIcon().toString().equals("0°³-1.png")) {
+							a[i - 9].setIcon(new ImageIcon(c[i - 9] + "°³.png"));
+							new minedetect3(a, i - 9, c, 0).run();
 						} else {
 						}
 
-						if (a[i - 1].getIcon().toString().equals("0ê°œ-1.png")) {
-							a[i - 1].setIcon(new ImageIcon(c[i - 1] + "ê°œ.png"));
-							new minedetect3(a, i - 1, c, 0,d).run();
+						if (a[i - 1].getIcon().toString().equals("0°³-1.png")) {
+							a[i - 1].setIcon(new ImageIcon(c[i - 1] + "°³.png"));
+							new minedetect3(a, i - 1, c, 0).run();
 						} else {
 						}
 
-						if (a[i + 9].getIcon().toString().equals("0ê°œ-1.png")) {
-							a[i + 9].setIcon(new ImageIcon(c[i + 9] + "ê°œ.png"));
-							new minedetect3(a, i + 9, c, 0,d).run();
+						if (a[i + 9].getIcon().toString().equals("0°³-1.png")) {
+							a[i + 9].setIcon(new ImageIcon(c[i + 9] + "°³.png"));
+							new minedetect3(a, i + 9, c, 0).run();
 						} else {
 						}
 
 					}
-				} else if (i % 9 == 0)// ê°œê°œê°œ
+				} else if (i % 9 == 0)// ¿ÞÂÊÁÙ
 				{
 					if (i == 0) {
 
-						if (a[i + 1].getIcon().toString().equals("0ê°œ-1.png")) {
-							a[i + 1].setIcon(new ImageIcon(c[i + 1] + "ê°œ.png"));
-							new minedetect3(a, i + 1, c, 0,d).run();
+						if (a[i + 1].getIcon().toString().equals("0°³-1.png")) {
+							a[i + 1].setIcon(new ImageIcon(c[i + 1] + "°³.png"));
+							new minedetect3(a, i + 1, c, 0).run();
 						} else {
 						}
 
-						if (a[i + 9].getIcon().toString().equals("0ê°œ-1.png")) {
-							a[i + 9].setIcon(new ImageIcon(c[i + 9] + "ê°œ.png"));
-							new minedetect3(a, i + 9, c, 0,d).run();
+						if (a[i + 9].getIcon().toString().equals("0°³-1.png")) {
+							a[i + 9].setIcon(new ImageIcon(c[i + 9] + "°³.png"));
+							new minedetect3(a, i + 9, c, 0).run();
 						} else {
 						}
 
 					} else if (i == 72) {
 
-						if (a[i - 9].getIcon().toString().equals("0ê°œ-1.png")) {
-							a[i - 9].setIcon(new ImageIcon(c[i - 9] + "ê°œ.png"));
-							new minedetect3(a, i - 9, c, 0,d).run();
+						if (a[i - 9].getIcon().toString().equals("0°³-1.png")) {
+							a[i - 9].setIcon(new ImageIcon(c[i - 9] + "°³.png"));
+							new minedetect3(a, i - 9, c, 0).run();
 						}
 
-						if (a[i + 1].getIcon().toString().equals("0ê°œ-1.png")) {
-							a[i + 1].setIcon(new ImageIcon(c[i + 1] + "ê°œ.png"));
-							new minedetect3(a, i + 1, c, 0,d).run();
+						if (a[i + 1].getIcon().toString().equals("0°³-1.png")) {
+							a[i + 1].setIcon(new ImageIcon(c[i + 1] + "°³.png"));
+							new minedetect3(a, i + 1, c, 0).run();
 						} else {
 						}
 
 					} else {
 
-						if (a[i - 9].getIcon().toString().equals("0ê°œ-1.png")) {
-							a[i - 9].setIcon(new ImageIcon(c[i - 9] + "ê°œ.png"));
-							new minedetect3(a, i - 9, c, 0,d).run();
+						if (a[i - 9].getIcon().toString().equals("0°³-1.png")) {
+							a[i - 9].setIcon(new ImageIcon(c[i - 9] + "°³.png"));
+							new minedetect3(a, i - 9, c, 0).run();
 						} else {
 						}
-						if (a[i + 1].getIcon().toString().equals("0ê°œ-1.png")) {
-							a[i + 1].setIcon(new ImageIcon(c[i + 1] + "ê°œ.png"));
-							new minedetect3(a, i + 1, c, 0,d).run();
-						} else {
-						}
-
-						if (a[i + 1].getIcon().toString().equals("0ê°œ-1.png")) {
-							a[i + 1].setIcon(new ImageIcon(c[i + 1] + "ê°œ.png"));
-							new minedetect3(a, i + 1, c, 0,d).run();
+						if (a[i + 1].getIcon().toString().equals("0°³-1.png")) {
+							a[i + 1].setIcon(new ImageIcon(c[i + 1] + "°³.png"));
+							new minedetect3(a, i + 1, c, 0).run();
 						} else {
 						}
 
-						if (a[i + 9].getIcon().toString().equals("0ê°œ-1.png")) {
-							a[i + 9].setIcon(new ImageIcon(c[i + 9] + "ê°œ.png"));
-							new minedetect3(a, i + 9, c, 0,d).run();
+						if (a[i + 1].getIcon().toString().equals("0°³-1.png")) {
+							a[i + 1].setIcon(new ImageIcon(c[i + 1] + "°³.png"));
+							new minedetect3(a, i + 1, c, 0).run();
+						} else {
+						}
+
+						if (a[i + 9].getIcon().toString().equals("0°³-1.png")) {
+							a[i + 9].setIcon(new ImageIcon(c[i + 9] + "°³.png"));
+							new minedetect3(a, i + 9, c, 0).run();
 						} else {
 						}
 
 					}
 				} else {
-					if (i / 9 == 0)// 0ê°œ 8ê°œê°œ ê°œê°œê°œ
+					if (i / 9 == 0)// 0°ú 8Á¦¿Ü ¸ÇÀ­ÁÙ
 					{
 
-						if (a[i - 1].getIcon().toString().equals("0ê°œ-1.png")) {
-							a[i - 1].setIcon(new ImageIcon(c[i - 1] + "ê°œ.png"));
-							new minedetect3(a, i - 1, c, 0,d).run();
+						if (a[i - 1].getIcon().toString().equals("0°³-1.png")) {
+							a[i - 1].setIcon(new ImageIcon(c[i - 1] + "°³.png"));
+							new minedetect3(a, i - 1, c, 0).run();
 						}
 
-						if (a[i + 1].getIcon().toString().equals("0ê°œ-1.png")) {
-							a[i + 1].setIcon(new ImageIcon(c[i + 1] + "ê°œ.png"));
-							new minedetect3(a, i + 1, c, 0,d).run();
+						if (a[i + 1].getIcon().toString().equals("0°³-1.png")) {
+							a[i + 1].setIcon(new ImageIcon(c[i + 1] + "°³.png"));
+							new minedetect3(a, i + 1, c, 0).run();
 						} else {
 						}
 
-						if (a[i + 9].getIcon().toString().equals("0ê°œ-1.png")) {
-							a[i + 9].setIcon(new ImageIcon(c[i + 9] + "ê°œ.png"));
-							new minedetect3(a, i + 9, c, 0,d).run();
+						if (a[i + 9].getIcon().toString().equals("0°³-1.png")) {
+							a[i + 9].setIcon(new ImageIcon(c[i + 9] + "°³.png"));
+							new minedetect3(a, i + 9, c, 0).run();
 						} else {
 						}
 
-					} else if (i - 71 > 0)// 72ê°œ 80ê°œê°œ ï¿½Ç¾Æ·ê°œï¿½
+					} else if (i - 71 > 0)// 72¿Í 80Á¦¿Ü ¸Ç¾Æ·¡ÁÙ
 					{
 
-						if (a[i - 9].getIcon().toString().equals("0ê°œ-1.png")) {
-							a[i - 9].setIcon(new ImageIcon(c[i - 9] + "ê°œ.png"));
-							new minedetect3(a, i - 9, c, 0,d).run();
+						if (a[i - 9].getIcon().toString().equals("0°³-1.png")) {
+							a[i - 9].setIcon(new ImageIcon(c[i - 9] + "°³.png"));
+							new minedetect3(a, i - 9, c, 0).run();
 						} else {
 						}
 
-						if (a[i - 1].getIcon().toString().equals("0ê°œ-1.png")) {
-							a[i - 1].setIcon(new ImageIcon(c[i - 1] + "ê°œ.png"));
-							new minedetect3(a, i - 1, c, 0,d).run();
+						if (a[i - 1].getIcon().toString().equals("0°³-1.png")) {
+							a[i - 1].setIcon(new ImageIcon(c[i - 1] + "°³.png"));
+							new minedetect3(a, i - 1, c, 0).run();
 						} else {
 						}
 
-						if (a[i + 1].getIcon().toString().equals("0ê°œ-1.png")) {
-							a[i + 1].setIcon(new ImageIcon(c[i + 1] + "ê°œ.png"));
-							new minedetect3(a, i + 1, c, 0,d).run();
+						if (a[i + 1].getIcon().toString().equals("0°³-1.png")) {
+							a[i + 1].setIcon(new ImageIcon(c[i + 1] + "°³.png"));
+							new minedetect3(a, i + 1, c, 0).run();
 						} else {
 						}
 
 					} else {
 
-						if (a[i - 9].getIcon().toString().equals("0ê°œ-1.png")) {
-							a[i - 9].setIcon(new ImageIcon(c[i - 9] + "ê°œ.png"));
-							new minedetect3(a, i - 9, c, 0,d).run();
+						if (a[i - 9].getIcon().toString().equals("0°³-1.png")) {
+							a[i - 9].setIcon(new ImageIcon(c[i - 9] + "°³.png"));
+							new minedetect3(a, i - 9, c, 0).run();
 						} else {
 						}
 
-						if (a[i - 1].getIcon().toString().equals("0ê°œ-1.png")) {
-							a[i - 1].setIcon(new ImageIcon(c[i - 1] + "ê°œ.png"));
-							new minedetect3(a, i - 1, c, 0,d).run();
+						if (a[i - 1].getIcon().toString().equals("0°³-1.png")) {
+							a[i - 1].setIcon(new ImageIcon(c[i - 1] + "°³.png"));
+							new minedetect3(a, i - 1, c, 0).run();
 						} else {
 						}
 
-						if (a[i + 1].getIcon().toString().equals("0ê°œ-1.png")) {
-							a[i + 1].setIcon(new ImageIcon(c[i + 1] + "ê°œ.png"));
-							new minedetect3(a, i + 1, c, 0,d).run();
+						if (a[i + 1].getIcon().toString().equals("0°³-1.png")) {
+							a[i + 1].setIcon(new ImageIcon(c[i + 1] + "°³.png"));
+							new minedetect3(a, i + 1, c, 0).run();
 						} else {
 						}
 
-						if (a[i + 9].getIcon().toString().equals("0ê°œ-1.png")) {
-							a[i + 9].setIcon(new ImageIcon(c[i + 9] + "ê°œ.png"));
-							new minedetect3(a, i + 9, c, 0,d).run();
+						if (a[i + 9].getIcon().toString().equals("0°³-1.png")) {
+							a[i + 9].setIcon(new ImageIcon(c[i + 9] + "°³.png"));
+							new minedetect3(a, i + 9, c, 0).run();
 						} else {
 						}
 
@@ -455,7 +453,5 @@ public class minedetect3 {
 			}
 
 		}
-		
-		new confirm(d,a,c).run();
-	}//ê°œ
+	}
 }

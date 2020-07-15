@@ -19,7 +19,7 @@ public class confirm {
 		int count = 0;
 		for (int j = 0; j < minearray.length; j++) {
 
-			if (b[minearray[j]].getIcon().toString().equals("Ã£À½.png")) {
+			if (b[minearray[j]].getIcon().toString().equals("ì°¾ìŒ.png")) {
 				y++;
 				System.out.println(y + "," + minearray.length);
 
@@ -43,7 +43,7 @@ public class confirm {
 				long time = (end - findmine.start) / 1000;
 				long point = end - findmine.start - time * 1000;
 
-				JOptionPane.showMessageDialog(null, time + "." + point + "ÃÊ");
+				JOptionPane.showMessageDialog(null, time + "." + point + "ì´ˆ");
 				findmine.frame.dispose();
 
 			}

@@ -12,37 +12,48 @@ import java.awt.event.ActionListener;
 
 public class findmine {
 
-	public static JFrame frame;
+	private JFrame frame;
 	Random random = new Random();
-	JButton[] a = new JButton[9 * 9];// ê°œÆ°ï¿½è¿­ 81ê°œ
-	int[] minedetector = new int[81];// ê°œê°œ ê°œê°œï¿½ï¿½
-	int howmine = 1;// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
-	int[] minearray = new int[howmine];// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç¥
-	public static long start = System.currentTimeMillis(); // ï¿½ï¿½ï¿½Û½Ã°ï¿½
-	int answer=0;
+	JButton[] a = new JButton[9 * 9];// ¹öÆ°¹è¿­ 81°³
+	int[] minedetector = new int[81];// Áö·Ú °¨Áö±â
+	int howmine = 15;// ÃÑÁö·Ú °¹¼ö
+	int[] minearray = new int[howmine];// Áö·ÚÁÂÇ¥
+
 	/**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
-		new findmine();
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					findmine window = new findmine();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
 	}
 
 	/**
 	 * Create the application.
 	 */
+	public findmine() {
+		initialize();
+	}
 
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	public findmine() {
-		int mine = 0;// ï¿½ï¿½ï¿½Î°ï¿½ï¿½ï¿½
-		
+	private void initialize() {
+		int mine = 0;// ¸¶ÀÎ°¹¼ö
+
 		frame = new JFrame();
-		frame.setBounds(0, 0, 600, 600);// GUI Å©ï¿½ï¿½
+		frame.setBounds(0, 0, 600, 600);// GUI Å©±â
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(new GridLayout(9, 9, 0, 0));
 
-		for (int i = 0; i < howmine; i++)// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ò¸ï¿½ï¿½ï¿½ï¿½
+		for (int i = 0; i < howmine; i++)// ¸¶ÀÎ Àå¼Ò¸¸µé±â
 		{
 			minearray[i] = random.nextInt(81);
 			for (int j = 0; j < i; j++) {
@@ -53,7 +64,7 @@ public class findmine {
 			}
 		}
 
-		for (int i = 0; i < 9 * 9; i++)// ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½Æ°ï¿½ï¿½ ï¿½ï¿½Ä­ï¿½Ì·ï¿½ ï¿½ï¿½ï¿½ï¿½
+		for (int i = 0; i < 9 * 9; i++)// ÀÏ´Ü ¸ğµç¹öÆ°Àº ºóÄ­ÀÌ·Î ÁöÁ¤
 		{
 
 			a[i] = new JButton("");
@@ -62,9 +73,9 @@ public class findmine {
 
 		}
 
-		for (int i = 0; i < howmine; i++)// ï¿½ï¿½ï¿½ï¿½ ï¿½Öºï¿½ ï¿½ï¿½ï¿½ï¿½ ++
+		for (int i = 0; i < howmine; i++)// ¸¶ÀÎ ÁÖº¯ º¯¼ö ++
 		{
-			if ((minearray[i] + 1) % 9 == 0)// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+			if ((minearray[i] + 1) % 9 == 0)// ¿À¸¥ÂÊÁÙ
 			{
 				if (minearray[i] == 8) {
 					minedetector[minearray[i] - 1]++;
@@ -81,7 +92,7 @@ public class findmine {
 					minedetector[minearray[i] + 8]++;
 					minedetector[minearray[i] + 9]++;
 				}
-			} else if (minearray[i] % 9 == 0)// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+			} else if (minearray[i] % 9 == 0)// ¿ŞÂÊÁÙ
 			{
 				if (minearray[i] == 0) {
 					minedetector[minearray[i] + 1]++;
@@ -99,14 +110,14 @@ public class findmine {
 					minedetector[minearray[i] + 10]++;
 				}
 			} else {
-				if (minearray[i] / 9 == 0)// 0ï¿½ï¿½ 8ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+				if (minearray[i] / 9 == 0)// 0°ú 8Á¦¿Ü ¸ÇÀ­ÁÙ
 				{
 					minedetector[minearray[i] - 1]++;
 					minedetector[minearray[i] + 1]++;
 					minedetector[minearray[i] + 8]++;
 					minedetector[minearray[i] + 9]++;
 					minedetector[minearray[i] + 10]++;
-				} else if (minearray[i] - 71 > 0)// 72ï¿½ï¿½ 80ï¿½ï¿½ï¿½ï¿½ ï¿½Ç¾Æ·ï¿½ï¿½ï¿½
+				} else if (minearray[i] - 71 > 0)// 72¿Í 80Á¦¿Ü ¸Ç¾Æ·¡ÁÙ
 				{
 					minedetector[minearray[i] - 10]++;
 					minedetector[minearray[i] - 9]++;
@@ -129,32 +140,32 @@ public class findmine {
 			}
 
 		}
-		for (int i = 0; i < 9 * 9; i++)// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö±ï¿½
+		for (int i = 0; i < 9 * 9; i++)// ¼ıÀÚÁı¾î³Ö±â
 		{
 
 			for (int j = 0; j < howmine; j++) {
 				int y = 0;
 				if (minearray[j] == i) {
-					a[i].setIcon(new ImageIcon("ì§€ë¢°-1.png"));
+					a[i].setIcon(new ImageIcon("Áö·Ú-1.png"));
 					y = 1;
 					break;
 				}
 				if (y == 1) {
 					continue;
 				} else {
-					a[i].setIcon(new ImageIcon(minedetector[i] + "ê°œ-1.png"));
+					a[i].setIcon(new ImageIcon(minedetector[i] + "°³-1.png"));
 				}
 			}
 
 		}
 
-		for (int i = 0; i < 9 * 9; i++)// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ° ï¿½ï¿½ï¿½ï¿½Ö±ï¿½
+		for (int i = 0; i < 9 * 9; i++)// ¼öÁ¤µÈ ¸ğµç¹öÆ° Áı¾î³Ö±â
 		{
 			frame.getContentPane().add(a[i]);
 		}
 
 		// https://code.i-harness.com/ko-kr/q/1654355
-		frame.setVisible(true);
+
 	}
 
 	class Change implements ActionListener {
@@ -166,101 +177,65 @@ public class findmine {
 
 		public void actionPerformed(ActionEvent e) {
 			JButton b = (JButton) e.getSource();
-			minedetect3 c = new minedetect3(a, i, minedetector, 1, minearray);
+			minedetect3 c = new minedetect3(a, i, minedetector, 1);
 
-			String[] what = { "í´ë¦­í•˜ê¸°", "ì°¾ìŒ", "?", "ì·¨ì†Œ" };
-			Object select = JOptionPane.showInputDialog(null, "ë¬´ì—‡ì„ í•˜ì‹œê² ìŠµê¹Œ?", " ", JOptionPane.QUESTION_MESSAGE, null,
+			String[] what = { "?", "Áö·Ú", "Å¬¸¯ÇÏ±â", "º¹±¸ÇÏ±â" };
+			Object select = JOptionPane.showInputDialog(null, "¾î¶»°ÔÇÏ°Ú½À´Ï±î?", " ", JOptionPane.QUESTION_MESSAGE, null,
 					what, what[0]);
 			if (select == null) {
 
 			} else if (select.toString().equals("?")) {
-				b.setIcon(new ImageIcon("ë¬¼ìŒí‘œ.png"));
-				
-				
-			} else if (select.toString().equals("ì°¾ìŒ")) {
-				b.setIcon(new ImageIcon("ì°¾ìŒ.png"));
+				b.setIcon(new ImageIcon("¹°À½Ç¥.png"));
+			} else if (select.toString().equals("Áö·Ú")) {
+				b.setIcon(new ImageIcon("Ã£À½.png"));
+			} else if (select.toString().equals("º¹±¸ÇÏ±â")) {
 				int y = 0;
 				for (int j = 0; j < howmine; j++) {
+
 					if (minearray[j] == i) {
+
 						y = 1;
-					}
-				}
-				if(y==1) {
-					answer++;
-					if(answer>=howmine) {
-						int result = JOptionPane.showConfirmDialog(null, "ëª¨ë‘ ì§€ë¢°ë¥¼ ì°¾ì•˜ìŠµë‹ˆë‹¤", "ì„±ê³µ", JOptionPane.YES_NO_OPTION);
-						if (result == JOptionPane.CLOSED_OPTION) {System.exit(0);
-							
-						} // ï¿½×³ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½
-						else if (result == JOptionPane.YES_OPTION)// ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ò¶ï¿½
-						{
-							System.exit(0);
-						} else if (result == JOptionPane.NO_OPTION)// ï¿½Æ´Ï¶ï¿½ï¿½ ï¿½Ò¶ï¿½
-						{
-							System.exit(0);
-						}
-					}
-				}
-			} else if (select.toString().equals("ì·¨ì†Œ")) {
-				int y = 0;
-				for (int j = 0; j < howmine; j++) {
-					if (minearray[j] == i) {
-						y = 1;
+
 					}
 				}
 				if (y == 1) {
-					a[i].setIcon(new ImageIcon("ì§€ë¢°-1.png"));
-					answer--;
+					a[i].setIcon(new ImageIcon("Áö·Ú-1.png"));
 				} else {
-					a[i].setIcon(new ImageIcon(minedetector[i] + "ê°œ-1.png"));
+					a[i].setIcon(new ImageIcon(minedetector[i] + "°³-1.png"));
 				}
 
-			} else if (select.toString().equals("í´ë¦­í•˜ê¸°")) {
-				if (b.getIcon().toString().equals("ì§€ë¢°-1.png")) {
-
-					new boom(minearray, a, minedetector).run();;
-
-					int result = JOptionPane.showConfirmDialog(null, "ì‹¤íŒ¨", "ì§€ë¢°ë¥¼ ë°Ÿì•˜ìŠµë‹ˆë‹¤", JOptionPane.YES_NO_OPTION);
-					if (result == JOptionPane.CLOSED_OPTION) {System.exit(0);
-						
-					} // ï¿½×³ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½
-					else if (result == JOptionPane.YES_OPTION)// ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ò¶ï¿½
-					{
-						System.exit(0);
-					} else if (result == JOptionPane.NO_OPTION)// ï¿½Æ´Ï¶ï¿½ï¿½ ï¿½Ò¶ï¿½
-					{
-						System.exit(0);
-					}
-				} else if (b.getIcon().toString().equals("0ê°œ-1.png")) {
-					b.setIcon(new ImageIcon("0ê°œ.png"));
-				} else if (b.getIcon().toString().equals("1ê°œ-1.png")) {
-					b.setIcon(new ImageIcon("1ê°œ.png"));
-				} else if (b.getIcon().toString().equals("2ê°œ-1.png")) {
-					b.setIcon(new ImageIcon("2ê°œ.png"));
-				} else if (b.getIcon().toString().equals("3ê°œ-1.png")) {
-					b.setIcon(new ImageIcon("3ê°œ.png"));
-				} else if (b.getIcon().toString().equals("4ê°œ-1.png")) {
-					b.setIcon(new ImageIcon("4ê°œ.png"));
-				} else if (b.getIcon().toString().equals("5ê°œ-1.png")) {
-					b.setIcon(new ImageIcon("5ê°œ.png"));
-				} else if (b.getIcon().toString().equals("6ê°œ-1.png")) {
-					b.setIcon(new ImageIcon("6ê°œ.png"));
-				} else if (b.getIcon().toString().equals("7ê°œ-1.png")) {
-					b.setIcon(new ImageIcon("7ê°œ.png"));
-				} else if (b.getIcon().toString().equals("8ê°œ-1.png")) {
-					b.setIcon(new ImageIcon("8ê°œ.png"));
-				} else if (b.getIcon().toString().equals("9ê°œ-1.png")) {
-					b.setIcon(new ImageIcon("9ê°œ.png"));
+			} else if (select.toString().equals("Å¬¸¯ÇÏ±â")) {
+				if (b.getIcon().toString().equals("Áö·Ú-1.png")) {
+					b.setIcon(new ImageIcon("Áö·Ú.png"));
+				} else if (b.getIcon().toString().equals("0°³-1.png")) {
+					b.setIcon(new ImageIcon("0°³.png"));
+				} else if (b.getIcon().toString().equals("1°³-1.png")) {
+					b.setIcon(new ImageIcon("1°³.png"));
+				} else if (b.getIcon().toString().equals("2°³-1.png")) {
+					b.setIcon(new ImageIcon("2°³.png"));
+				} else if (b.getIcon().toString().equals("3°³-1.png")) {
+					b.setIcon(new ImageIcon("3°³.png"));
+				} else if (b.getIcon().toString().equals("4°³-1.png")) {
+					b.setIcon(new ImageIcon("4°³.png"));
+				} else if (b.getIcon().toString().equals("5°³-1.png")) {
+					b.setIcon(new ImageIcon("5°³.png"));
+				} else if (b.getIcon().toString().equals("6°³-1.png")) {
+					b.setIcon(new ImageIcon("6°³.png"));
+				} else if (b.getIcon().toString().equals("7°³-1.png")) {
+					b.setIcon(new ImageIcon("7°³.png"));
+				} else if (b.getIcon().toString().equals("8°³-1.png")) {
+					b.setIcon(new ImageIcon("8°³.png"));
+				} else if (b.getIcon().toString().equals("9°³-1.png")) {
+					b.setIcon(new ImageIcon("9°³.png"));
 				} else {
 				}
 
 				c.run();
-				
 			}
 
 			else {
 			}
-			new confirm(minearray, a, minedetector).run();
+
 		}
 	}
 }
